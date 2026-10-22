@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Smart Campus AI</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="dashboard">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content">
+      <div class="page-head">
+        <div><h1>Dashboard</h1><p>Общее состояние инфраструктуры кампуса</p></div>
+        <button class="btn" id="simBtn">▶ Симулировать показания</button>
+      </div>
+      <section class="kpi-grid" id="kpiGrid"></section>
+      <section class="grid-3">
+        <div class="card"><h3>⚡ Энергопотребление по корпусам</h3><div class="chart-box"><canvas id="energyChart"></canvas></div></div>
+        <div class="card"><h3>🌡️ Температура (тренд)</h3><div class="chart-box"><canvas id="tempChart"></canvas></div></div>
+        <div class="card"><h3>📡 Статус устройств</h3><div class="chart-box"><canvas id="deviceChart"></canvas></div></div>
+      </section>
+      <section class="grid-2">
+        <div class="card"><h3>🔔 Уведомления</h3><div class="alert-list" id="alertList"></div></div>
+        <div class="card"><h3>🛠 Последние заявки</h3>
+          <div class="table-wrap"><table><thead><tr><th>ID</th><th>Заявка</th><th>Помещение</th><th>Приоритет</th><th>Статус</th></tr></thead><tbody id="recentInc"></tbody></table></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

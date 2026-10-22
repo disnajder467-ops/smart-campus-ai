@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incidents — Smart Campus AI</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="incidents">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content">
+      <div class="page-head">
+        <div><h1>Incidents</h1><p>Заявки и инциденты: создание, изменение, удаление</p></div>
+        <button class="btn" id="addIncBtn">＋ Новая заявка</button>
+      </div>
+      <div class="card">
+        <div class="toolbar">
+          <label class="grow">Поиск<input type="search" id="incSearch" placeholder="Название, помещение, ответственный…"></label>
+          <label>Статус<select id="incStatusF"><option value="">Все</option><option value="open">Открыта</option><option value="in_progress">В работе</option><option value="resolved">Решена</option></select></label>
+          <label>Приоритет<select id="incPrioF"><option value="">Все</option><option value="high">Высокий</option><option value="medium">Средний</option><option value="low">Низкий</option></select></label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="table-wrap"><table class="wide"><thead><tr><th>ID</th><th>Заявка</th><th>Помещение</th><th>Приоритет</th><th>Статус</th><th>Ответственный</th><th>Создана</th><th>Действия</th></tr></thead><tbody id="incBody"></tbody></table></div>
+        <p class="result-count" id="incCount"></p>
+      </div>
+      <dialog id="incDialog">
+        <h3 id="incDialogTitle">Новая заявка</h3>
+        <form id="incForm" novalidate>
+          <input type="hidden" id="incId">
+          <label>Название<input type="text" id="incTitle" maxlength="80" placeholder="Например: Не работает кондиционер"></label>
+          <div class="form-grid">
+            <label>Помещение<select id="incRoom"></select></label>
+            <label>Приоритет<select id="incPriority"><option value="low">Низкий</option><option value="medium">Средний</option><option value="high">Высокий</option></select></label>
+            <label>Статус<select id="incStatus"><option value="open">Открыта</option><option value="in_progress">В работе</option><option value="resolved">Решена</option></select></label>
+            <label>Ответственный<select id="incAssignee"></select></label>
+            <label class="full">Комментарий<textarea id="incComment" rows="3" maxlength="300"></textarea></label>
+          </div>
+          <p class="form-error" id="incError" role="alert"></p>
+          <div class="dialog-actions"><button type="button" class="btn ghost" id="incCancel">Отмена</button><button type="submit" class="btn">Сохранить</button></div>
+        </form>
+      </dialog>
+    </main>
+  </div>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/incidents.js"></script>
+</body>
+</html>

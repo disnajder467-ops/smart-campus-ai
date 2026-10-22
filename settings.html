@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Настройки — Умный кампус ИИ</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="settings">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content">
+      <div class="page-head"><div><h1>Настройки</h1><p>Тема, параметры кампуса и тестовые данные</p></div></div>
+      <section class="grid-2">
+        <div class="card"><h3>🎨 Тема оформления</h3><p class="muted" style="margin-bottom:14px">Выбор сохраняется в памяти браузера.</p>
+          <div class="seg"><button type="button" data-theme="dark">🌙 Тёмная</button><button type="button" data-theme="light">☀️ Светлая</button></div></div>
+        <div class="card"><h3>👤 Профиль</h3><p id="profileInfo"></p></div>
+        <div class="card"><h3>🏫 Параметры кампуса</h3>
+          <form id="settingsForm" novalidate>
+            <label>Название кампуса<input type="text" id="campusName" maxlength="40"></label>
+            <div class="form-grid">
+              <label>CO₂ внимание, ppm<input type="number" id="co2Warn"></label>
+              <label>CO₂ критично, ppm<input type="number" id="co2Crit"></label>
+              <label>Температура внимание, °C<input type="number" step="0.5" id="tempWarn"></label>
+              <label>Температура критично, °C<input type="number" step="0.5" id="tempCrit"></label>
+              <label class="full">Порог z-оценки (1–5)<input type="number" step="0.1" id="zLimit"></label>
+            </div>
+            <button class="btn" type="submit">Сохранить</button>
+          </form></div>
+        <div class="card"><h3>💾 Данные</h3><p class="muted" id="storageInfo" style="margin-bottom:14px"></p>
+          <button class="btn danger" id="resetBtn" type="button">Сбросить тестовые данные</button>
+          <p class="muted small" id="resetNote" style="margin-top:10px"></p></div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/settings.js"></script>
+</body>
+</html>

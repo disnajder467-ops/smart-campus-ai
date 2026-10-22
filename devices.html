@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devices — Smart Campus AI</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="devices">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content">
+      <div class="page-head"><div><h1>Devices</h1><p>IoT-датчики: температура, CO₂, электроэнергия</p></div></div>
+      <div class="card">
+        <div class="toolbar">
+          <label class="grow">Поиск<input type="search" id="devSearch" placeholder="ID датчика, помещение, тип…"></label>
+          <label>Статус<select id="devStatus"><option value="">Все</option><option value="online">Online</option><option value="offline">Offline</option></select></label>
+          <label>Тип<select id="devType"></select></label>
+          <label>Корпус<select id="devBuilding"></select></label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="table-wrap"><table><thead><tr><th>Sensor ID</th><th>Помещение</th><th>Тип</th><th>Статус</th><th>Значение</th><th>Обновлено</th><th></th></tr></thead><tbody id="devBody"></tbody></table></div>
+        <p class="result-count" id="devCount"></p>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/devices.js"></script>
+</body>
+</html>

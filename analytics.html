@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics — Smart Campus AI</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="analytics">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content">
+      <div class="page-head">
+        <div><h1>AI Analytics</h1><p>Обнаружение аномалий: пороги + z-score, рекомендации оператору</p></div>
+        <div class="actions">
+          <label class="switch"><input type="checkbox" id="autoSim"> Авто-обновление (5 сек)</label>
+          <button class="btn" id="simBtn">▶ Симулировать показания</button>
+        </div>
+      </div>
+      <section class="kpi-grid" id="aiKpi"></section>
+      <div class="card">
+        <h3>🧠 Найденные аномалии</h3>
+        <div class="table-wrap"><table class="wide"><thead><tr><th>Помещение</th><th>Параметр</th><th>Значение</th><th>Z-score</th><th>Причина</th><th>Риск</th><th>Рекомендация</th></tr></thead><tbody id="anomBody"></tbody></table></div>
+      </div>
+      <section class="grid-2">
+        <div class="card">
+          <h3>📈 Динамика показателя</h3>
+          <div class="form-grid"><label>Помещение<select id="trendRoom"></select></label><label>Показатель<select id="trendMetric"></select></label></div>
+          <div class="chart-box"><canvas id="trendChart"></canvas></div>
+        </div>
+        <div class="card"><h3>🎯 Аномалии по уровню риска</h3><div class="chart-box"><canvas id="riskChart"></canvas></div></div>
+      </section>
+      <section class="grid-2">
+        <div class="card"><h3>⚡ Энергия: факт vs базовая линия</h3><div class="chart-box"><canvas id="baseChart"></canvas></div></div>
+        <div class="card"><h3>💡 Рекомендации по помещениям</h3><div class="alert-list" id="roomRecs"></div></div>
+      </section>
+      <div class="info"><b>Как это работает.</b> Значение сравнивается с порогами (normal / warning / critical), а также с историей последних показаний: если <b>z-score</b> = |значение − среднее| / σ превышает порог, показание считается статистической аномалией. Рекомендации формируются по правилам (rule-based) — это не генеративный AI.</div>
+    </main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/analytics.js"></script>
+</body>
+</html>

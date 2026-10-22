@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooms — Smart Campus AI</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="rooms">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content">
+      <div class="page-head"><div><h1>Rooms</h1><p>Аудитории, лаборатории и служебные помещения</p></div></div>
+      <div class="card">
+        <div class="toolbar">
+          <label class="grow">Поиск<input type="search" id="roomSearch" placeholder="ID, тип или корпус…"></label>
+          <label>Корпус<select id="roomBuilding"></select></label>
+          <label>Статус<select id="roomStatus"><option value="">Все</option><option value="normal">Норма</option><option value="warning">Внимание</option><option value="critical">Критично</option></select></label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="table-wrap"><table class="wide"><thead><tr><th>ID</th><th>Корпус</th><th>Этаж</th><th>Тип</th><th>Темп.</th><th>CO₂</th><th>Энергия</th><th>Людей</th><th>Статус</th><th>Рекомендация</th></tr></thead><tbody id="roomsBody"></tbody></table></div>
+        <p class="result-count" id="roomCount"></p>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/rooms.js"></script>
+</body>
+</html>
