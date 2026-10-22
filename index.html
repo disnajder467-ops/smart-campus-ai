@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вход — Умный кампус ИИ</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="login">
+<div class="login-wrap">
+  <div class="card login-card">
+    <div class="brand big"><span>🏫</span><div><b>Умный кампус ИИ</b><small>Интеллектуальная платформа кампуса</small></div></div>
+    <form id="loginForm" novalidate>
+      <label>Эл. почта<input type="email" id="email" placeholder="admin@campus.edu" autocomplete="username"></label>
+      <label>Пароль<input type="password" id="password" placeholder="••••" autocomplete="current-password"></label>
+      <label>Роль<select id="role"><option>Администратор</option><option>Инженер</option><option>Оператор</option></select></label>
+      <p class="form-error" id="loginError" role="alert"></p>
+      <button class="btn block" type="submit">Войти</button>
+    </form>
+    <p class="muted small" style="margin-top:16px">Учебная имитация входа: подойдёт любая эл. почта и пароль от 4 символов. Роли показывают разные права, но это не настоящая защита.</p>
+  </div>
+</div>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/login.js"></script>
+</body>
+</html>
